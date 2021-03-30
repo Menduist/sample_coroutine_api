@@ -1,5 +1,5 @@
 #include "db.h"
-#include "coro.h"
+#include "../coro.h"
 #include "re_pgsql.h"
 #include <string.h>
 #include <stdlib.h>

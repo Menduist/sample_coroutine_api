@@ -6,7 +6,7 @@
 
 #define REPG_DEBUG 1
 #ifdef REPG_DEBUG
-#include "coro.h"
+#include "../coro.h"
 #endif
 
 static void re_pgsql_handler(int flags, void *arg);

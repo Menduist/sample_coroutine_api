@@ -2,33 +2,33 @@
 CC=gcc
 NAME=sample_api
 LDLIBS=-ltca -lre -lyaml -lpq -lm
-LDLOCS=-Llibtca
-LDINCS=-Ilibtca
+LDLOCS=-Lsrc/libtca
+LDINCS=-Isrc/libtca
 CFLAGS=-O0 -g -I. $(LDINCS) $(LDLIBS) $(LDLOCS)
 SRCS= \
-    main.c \
-    coro.c \
-    config.c \
-    api.c \
-    http.c \
-    db/re_pgsql.c \
-    db/db.c \
+    src/main.c \
+    src/coro.c \
+    src/config.c \
+    src/api.c \
+    src/http.c \
+    src/db/re_pgsql.c \
+    src/db/db.c \
 
 DEPS= \
     Makefile \
-    coro.h \
-    config.h \
-    main.h \
-    api.h \
-    http.h \
-    db/db.h \
-    libtca/libtca.a \
+    src/coro.h \
+    src/config.h \
+    src/main.h \
+    src/api.h \
+    src/http.h \
+    src/db/db.h \
+    src/libtca/libtca.a \
 
 
 all: $(NAME)
 
-libtca/libtca.a: libtca
-	make -C libtca
+src/libtca/libtca.a: src/libtca
+	make -C src/libtca
 
 $(NAME): $(SRCS) $(DEPS)
 	$(CC) $(SRCS) -o $(NAME) $(CFLAGS)

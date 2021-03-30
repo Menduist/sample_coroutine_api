@@ -1,7 +1,7 @@
 #ifndef DB_H
 #define DB_H
 
-#include "config.h"
+#include "../config.h"
 #include <stdbool.h>
 
 struct main;
